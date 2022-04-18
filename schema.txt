@@ -1,0 +1,57 @@
+Finished version of this will be in JSON, but for now just thinking through the kinds of data needed and likely relationships.
+
+applications
+    application
+        name
+        owner -> user_id
+        links
+            repo
+            dev
+            test
+            prod
+            docs
+        infrastructure
+            location (aws, gcp, onprem, etc.)
+            regions
+                region
+            orchestrator (chef, ansible, terraform, cloud formation, etc.)
+        deployment (manual, jenkins, circle, etc.)
+        data classification
+        dependencies
+            dependency
+                name
+                url
+                description
+                contract
+                createdAt
+                owner
+                upstream/downstream?
+
+users
+    user
+        _id
+        name
+            first
+            middle
+            last
+        emails
+            email
+            primary(bool - only on one email)
+        phones
+            phone
+                number
+                type (home, mobile, work, pager)
+        last_login
+        tokens
+            token
+            expires
+        passwords
+            hash
+            active
+            createdAt
+
+threats //create a threat database
+    threat
+        name
+        vector
+        description
